@@ -1,7 +1,7 @@
 <ul>
     @guest
-    <li><a href="{{ route('register') }}">Sign Up</a></li>
-    <li><a href="{{ route('login') }}">Login</a></li>
+    <li><a href="{{ route('register') }}"> <i class="fa fa-sign-in" aria-hidden="true"></i> Sign Up</a></li>
+    <li><a href="{{ route('login') }}"> <i class="fa fa-user" aria-hidden="true"></i> Login</a></li>
     @else
     <li>
         <a href="{{ route('users.edit') }}">My Account</a>
@@ -18,9 +18,9 @@
         {{ csrf_field() }}
     </form>
     @endguest
-    <li><a href="{{ route('cart.index') }}">Cart
+    <li><a href="{{ route('cart.index') }}"> <i class="fa fa-cart-plus" aria-hidden="true"></i> Cart
     @if (Cart::instance('default')->count() > 0)
-    <span class="cart-count"><span>{{ Cart::instance('default')->count() }}</span></span>
+    <span class="cart-count card-caunt-custom"><span>{{ Cart::instance('default')->count() }}</span></span>
     @endif
     </a></li>
     {{-- @foreach($items as $menu_item)
